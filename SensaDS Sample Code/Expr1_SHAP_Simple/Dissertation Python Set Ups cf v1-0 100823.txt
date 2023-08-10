@@ -1,0 +1,6 @@
+pip install wittgenstein
+
+pip install alibi
+
+pip install tensorflow
+
