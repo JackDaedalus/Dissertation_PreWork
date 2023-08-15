@@ -1,0 +1,57 @@
+To what extent can we quantify the quality of
+contemporary machine learning interpretability
+techniques, providing local, model-agnostic, and
+post-hoc explanations, in the classification of credit
+card fraud transactions by a ‘black box’ Neural
+Network ML model?
+
+
+
+
+Quantifying the quality of machine learning interpretability techniques, especially for tasks like credit card fraud detection using 'black box' neural network models, 
+is a multifaceted problem. Let's break it down by first understanding the terminologies:
+
+1. **Local explanations:** These provide insights for individual predictions rather than the model as a whole.
+2. **Model-agnostic explanations:** These are methods that aim to explain any model's predictions rather than being tailored for a specific type of model.
+3. **Post-hoc explanations:** These are methods applied after a model has been trained, as opposed to during training.
+
+To quantify the quality of interpretability techniques, consider the following aspects:
+
+1. **Faithfulness:** Does the explanation accurately reflect the behavior of the model for the given instance?
+   
+2. **Consistency:** Across similar instances or slight perturbations, does the explanation change in a reasonable and understandable manner?
+
+3. **Comprehensibility:** Is the explanation easy to understand for stakeholders, including domain experts, model developers, and possibly end-users?
+
+4. **Coverage:** Does the method provide insights for a wide range of model predictions, or is it limited to certain areas of the decision space?
+
+5. **Granularity:** Can the method provide both high-level and detailed explanations if needed?
+
+6. **Computational Efficiency:** How resource-intensive is the interpretability method?
+
+7. **Generality:** Does the method work for various model architectures and datasets?
+
+
+
+In the context of credit card fraud transactions using neural networks:
+
+1. **Relevance:** It's crucial that the explanations reflect features and aspects that are pertinent to fraud detection. 
+For instance, large transactions made in a foreign country shortly after a small local transaction might be suspicious.
+
+2. **Actionability:** Stakeholders like financial analysts need to be able to act upon the explanations. 
+A good explanation would provide insights that can lead to direct interventions or further investigations.
+
+3. **Evaluation Metrics:** While traditionally model performance might be evaluated using metrics like accuracy, precision, recall, and the AUC-ROC curve, 
+interpretability evaluation can be more subjective. Qualitative evaluation, like user studies, can help understand the value of interpretability techniques.
+
+
+Quantifying the quality of these explanations can be done through:
+
+1. **User Studies:** Observing how domain experts react to and make decisions based on the explanations can provide insights into their effectiveness.
+   
+2. **Simulated Experiments:** For example, you might intentionally train a model with biases and see if your interpretability method can detect and explain them.
+
+3. **Direct Quantitative Measures:** Some methods, like LIME or SHAP, have their own metrics or criteria to evaluate the quality of explanations.
+
+In summary, while quantifying the quality of machine learning interpretability techniques can be challenging, 
+a combination of quantitative and qualitative methods, grounded in the context of the application (like credit card fraud detection), can provide a comprehensive assessment.
