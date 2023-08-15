@@ -1,0 +1,32 @@
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+import shap
+
+# 1. Generate a sample dataset
+np.random.seed(0)
+X = np.random.randn(1000, 5)
+y = (X[:, 0] + 2*X[:, 1] + np.random.randn(1000) > 0).astype(int)
+
+feature_names = [f"Feature_{i}" for i in range(1, 6)]
+
+# 2. Train an XGBClassifier model
+model = xgb.XGBClassifier()
+model.fit(X, y)
+
+# 3. Compute SHAP values using the Tree explainer
+explainer = shap.Explainer(model)
+shap_values = explainer.shap_values(X)
+
+# 4. Create a table to display feature values, SHAP values, and model predictions
+df_X = pd.DataFrame(X, columns=feature_names)
+df_shap = pd.DataFrame(shap_values, columns=[f"{name}_SHAP" for name in feature_names])
+predictions = model.predict(X)
+df_X['Prediction'] = predictions
+
+# Combining feature values, SHAP values, and predictions into one DataFrame
+result = pd.concat([df_X, df_shap], axis=1)
+
+# Display the table (for demonstration purposes, show only the first 5 instances)
+print(result.head())
+

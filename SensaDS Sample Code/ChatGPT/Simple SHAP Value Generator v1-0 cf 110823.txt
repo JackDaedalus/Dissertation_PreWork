@@ -1,0 +1,23 @@
+import numpy as np
+import xgboost as xgb
+import shap
+
+# Generate a sample dataset
+np.random.seed(0)
+X = np.random.randn(1000, 5)
+y = (X[:, 0] + 2*X[:, 1] + np.random.randn(1000) > 0).astype(int)
+
+# Train an XGBClassifier model
+model = xgb.XGBClassifier()
+model.fit(X, y)
+
+# Compute SHAP values using the Tree explainer
+explainer = shap.Explainer(model)
+shap_values = explainer.shap_values(X)
+
+# Plot SHAP values for a single instance (e.g., the first instance in the dataset)
+shap.initjs()  # Necessary for visual display
+shap.force_plot(explainer.expected_value, shap_values[0, :], X[0, :])
+
+# To visualize the summary of SHAP values for all features, you can use:
+# shap.summary_plot(shap_values, X)
