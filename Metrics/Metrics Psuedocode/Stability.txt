@@ -1,0 +1,16 @@
+"Stability" - this metric states that instances belonging to the same class must have comparable explanations
+
+- Assume that the dataset has been balanced 50:50 for fraud/non-fraud.
+- Cluster explanations of all instances in test data by k-means, include the 'predicted fraud' label.
+- Number of clusters equals label values, in this case two (fraud/non-fraud)
+- For each instance in test data
+	- compare explanation cluster label to predicted class label
+	- if match, then stability satisfied
+	
+	alternatively
+	
+	- compare explanation cluster label in largest cluster to predicted class label
+	- Take ratio of majority predicted class label to minority class as the stability measure (the higher the value the closer the explanation clusters map to predicted results).	
+	
+Question: how do we know which explanations cluster equates to 'fraud' and which cluster equates to 'non-fraud'? If dataset is a 50:50 label split and we use two clusters then 
+we can just pick one cluster (use the largest).
