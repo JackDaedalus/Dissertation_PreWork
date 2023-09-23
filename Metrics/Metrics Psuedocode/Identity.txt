@@ -1,21 +1,21 @@
 "Identity"
-Start with first instance in test data
-Search the remaining instances in test data and calculate distance from first instance
-Select first instance with zero distance, if any
-Generate explanations for both instances
-Calculate distance between both instance explanations
-Generate success if explanation distance is equal to zero
-Drop first instance from test data
-Repeat with second instance until end of test data instances
-Calculate rate of explanation distance = zero / instance feature distance = zero
+- Start with first instance in test data
+- Search the remaining instances in test data and calculate distance from first instance
+- Select first instance with zero distance, if any
+- Generate explanations for both instances
+- Calculate distance between both instance explanations
+- Generate success if explanation distance is equal to zero
+- Drop first instance from test data
+- Repeat with second instance until end of test data instances
+- Calculate rate of explanation distance = zero / instance feature distance = zero
 
 OR  (Go with this one!)
 
-Start with first instance in test data
-Search all other instances in test data and calculate distance from first instance (feature distance)
-Select closest other instance to first instance, i
-Generate explanations for all instances in test data
-Calculate distance of first instance explanations from explanations in all other instances
-Select closest other instance to first instance (explanation distance), t
-Generate success if instance id (i) = instance id (t)
-Drop first instance from test data
+- Start with first instance in test data
+- Search all other instances in test data and calculate distance from first instance (feature distance)
+- Select closest other instance to first instance, i
+- Generate explanations for all instances in test data
+- Calculate distance of first instance explanations from explanations in all other instances
+- Select closest other instance to first instance (explanation distance), t
+- Generate success if instance id (i) = instance id (t)
+- Drop first instance from test data
