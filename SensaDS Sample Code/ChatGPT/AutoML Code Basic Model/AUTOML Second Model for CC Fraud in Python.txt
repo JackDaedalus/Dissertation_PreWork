@@ -1,0 +1,60 @@
+# Required libraries
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from tpot import TPOTClassifier
+from sklearn.feature_selection import SelectKBest, f_classif
+import shap
+
+# Load your dataset
+data = pd.read_csv('your_dataset_path_here.csv')
+
+# Assuming the target variable 'Fraud' is encoded as 'Y' and 'N'
+data['Fraud'] = data['Fraud'].map({'Y': 1, 'N': 0})
+
+# Split the data
+X = data.drop('Fraud', axis=1)
+y = data['Fraud']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Feature Selection
+selector = SelectKBest(score_func=f_classif, k=30)
+X_train_selected = selector.fit_transform(X_train, y_train)
+X_test_selected = selector.transform(X_test)
+
+# TPOT AutoML Classifier
+tpot = TPOTClassifier(verbosity=2, max_time_mins=30, population_size=50)
+tpot.fit(X_train_selected, y_train)
+print(tpot.score(X_test_selected, y_test))
+
+# Generate the range of accuracy metrics (Confusion matrix, precision, recall, F1, ROC AUC)
+from sklearn.metrics import classification_report, confusion_matrix
+y_pred = tpot.predict(X_test_selected)
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+
+# SHAP explanation
+explainer = shap.TreeExplainer(tpot.fitted_pipeline_.steps[-1][1])
+shap_values = explainer.shap_values(X_test_selected)
+
+# Display the average SHAP values for each feature
+selected_cols = [X.columns[i] for i in selector.get_support(indices=True)]
+shap.summary_plot(shap_values, X_test_selected, plot_type="bar", feature_names=selected_cols)
+
+# Create a table with feature name beside the SHAP score associated with that feature
+shap_mean = shap_values[0].mean(axis=0)
+shap_df = pd.DataFrame(list(zip(selected_cols, shap_mean)), columns=['Feature', 'SHAP Value'])
+print(shap_df)
+
+
+This script will perform the following steps:
+
+Load the dataset and convert 'Y'/'N' labels to 1/0.
+Split the data into training and testing sets.
+Use SelectKBest for feature selection and select the 30 most relevant features.
+Train the TPOT AutoML classifier.
+Generate accuracy metrics like confusion matrix, precision, recall, etc.
+Use SHAP to explain the model and produce a summary plot.
+Create a table with the feature names and their associated SHAP values.
+Make sure to replace 'your_dataset_path_here.csv' with the path to your dataset. Adjust the parameters in the TPOTClassifier (like max_time_mins and population_size) as needed for your computational resources and time constraints.
+
+Also, ensure that you've installed the required libraries (tpot, shap, pandas, scikit-learn) before executing the code.

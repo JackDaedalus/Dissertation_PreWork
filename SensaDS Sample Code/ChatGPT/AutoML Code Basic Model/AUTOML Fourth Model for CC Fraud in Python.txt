@@ -1,0 +1,50 @@
+import pandas as pd
+from pycaret.classification import *
+
+# Load dataset
+data = pd.read_csv('your_dataset_path_here.csv')
+
+# Setup pycaret
+clf1 = setup(data, target = 'Fraud', 
+             feature_selection = True, 
+             feature_selection_threshold = 30/300,  # selecting top 30 features
+             silent = True, session_id = 42)
+
+# Compare models to choose the best
+best_model = compare_models()
+
+# Finalize the model (this trains the model on the complete dataset)
+final_model = finalize_model(best_model)
+
+# Evaluate the model
+evaluate_model(final_model)
+
+# Generate SHAP values
+interpret_model(final_model)
+
+# Extract feature importance using SHAP
+shap_values = get_config('shap_values')
+shap_df = pd.DataFrame(shap_values, columns = ['Feature', 'SHAP Value'])
+print(shap_df.sort_values(by='SHAP Value', ascending=False).head(30))  # top 30 features by SHAP value
+
+
+
+
+Here's what the code does:
+
+Load the dataset.
+Set up pycaret with the necessary configuration, including feature selection.
+Compare different models and select the best one based on accuracy.
+Evaluate the model for different accuracy metrics.
+Generate SHAP values for the model.
+Extract and display the top 30 features based on their SHAP values.
+
+
+Remember to replace 'your_dataset_path_here.csv' with the actual path to your dataset. 
+Before executing, ensure you have installed the necessary libraries. For this code, you'll mainly need to install pycaret:
+
+
+pip install pycaret
+
+
+This should automatically handle most dependencies. Ensure that you've set up a virtual environment or similar to manage dependencies effectively.

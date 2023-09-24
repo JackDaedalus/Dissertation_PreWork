@@ -1,13 +1,19 @@
-Using open soure Python AutoML libraries, provide generic Python code to take a 300 feature dataset, 
+Using the Pycaret open soure Python AutoML libraries, provide generic Python code to take a 300 feature dataset, 
 used for a credit card fraud classification problem in Machin eLearning, and generate a detection model.
 
-The dataset has a mixture of categorical and numberical featuresm and has a 'Y/N' label for fraud, called 'Fraud'.
+The dataset has a mixture of categorical and numberical features and has a 'Y/N' label for fraud, called 'Fraud'.
 
-Use feature selection so that the 30 most relevant features are used in the creation of the ML model,
+Use feature selection so that the 30 most relevant features are used in the creation of the ML model.
 
-Produce a rnage of accuracy metrics at the end of the Python code.
+Produce a range of accuracy metrics at the end of the Python code.
+
+Ensure that the model output of the auto ML is callable by the SHAP Explainer function. The h2o4gpu cannot be used.
 
 Then create a table with a columns for each feature name beside the SHAP score associated with that feature.
+
+The libraries must run on a Windows machine.
+
+The pycaret library must return a tree based model that is supported by the 'interpret_model' function for binary classification
 
 
 

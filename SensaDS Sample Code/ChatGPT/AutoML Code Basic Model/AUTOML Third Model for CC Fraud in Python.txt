@@ -1,0 +1,59 @@
+import pandas as pd
+import autosklearn.classification
+from sklearn.model_selection import train_test_split
+from sklearn.feature_selection import SelectKBest, f_classif
+import shap
+
+# Load your dataset
+data = pd.read_csv('your_dataset_path_here.csv')
+
+# Convert 'Y'/'N' labels to 1/0
+data['Fraud'] = data['Fraud'].map({'Y': 1, 'N': 0})
+
+# Split data
+X = data.drop('Fraud', axis=1)
+y = data['Fraud']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Feature Selection
+selector = SelectKBest(score_func=f_classif, k=30)
+X_train_selected = selector.fit_transform(X_train, y_train)
+X_test_selected = selector.transform(X_test)
+
+# Auto-sklearn Classifier
+automl = autosklearn.classification.AutoSklearnClassifier(time_left_for_this_task=3600, per_run_time_limit=300)
+automl.fit(X_train_selected, y_train)
+
+# Predictions and Accuracy Metrics
+y_pred = automl.predict(X_test_selected)
+
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+
+# SHAP Explanation
+explainer = shap.Explainer(automl)
+shap_values = explainer(X_test_selected)
+
+# Display the average SHAP values for each feature
+selected_cols = [X.columns[i] for i in selector.get_support(indices=True)]
+shap.summary_plot(shap_values.values, X_test_selected, plot_type="bar", feature_names=selected_cols)
+
+# Create a table with feature name beside the SHAP score associated with that feature
+shap_mean = shap_values.values.mean(axis=0)
+shap_df = pd.DataFrame(list(zip(selected_cols, shap_mean)), columns=['Feature', 'SHAP Value'])
+print(shap_df)
+
+
+
+Steps: (Does not work on Windows - maybe swtich to databricks?)
+
+Load the dataset and process labels.
+Split data into training and test sets.
+Apply SelectKBest for feature selection.
+Use AutoSklearnClassifier for classification.
+Produce accuracy metrics.
+Explain the model using SHAP.
+Produce a table containing features and their SHAP values.
+Remember to install necessary packages (autosklearn, pandas, shap, scikit-learn). Adjust parameters (like time_left_for_this_task and per_run_time_limit) depending on computational resources and time constraints.

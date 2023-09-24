@@ -1,0 +1,49 @@
+import pandas as pd
+from pycaret.classification import *
+
+# Load dataset
+data = pd.read_csv('your_dataset_path_here.csv')
+
+# Setup pycaret environment
+clf1 = setup(data, target='Fraud', 
+             feature_selection=True, 
+             feature_selection_threshold=30/300,  # selecting top 30 features
+             silent=True, session_id=42)
+
+# Train a tree-based model. Here we'll use the RandomForest classifier as an example.
+# Other tree-based classifiers supported by pycaret include 'dt', 'et', 'lightgbm', etc.
+model = create_model('rf')
+
+# Finalize the model (this trains the model on the complete dataset)
+final_model = finalize_model(model)
+
+# Evaluate the model
+evaluate_model(final_model)
+
+# Interpret the model using SHAP
+interpret_model(final_model, plot='summary')
+
+# If you want to get the SHAP values directly:
+explainer = shap.Explainer(final_model)
+shap_values = explainer.shap_values(data.drop(columns=['Fraud']))
+
+# Create a DataFrame for the mean absolute shap values for each feature for class 1 (Fraud=Y)
+shap_df = pd.DataFrame(shap_values[1], columns=data.drop(columns=['Fraud']).columns)
+shap_summary = shap_df.abs().mean().sort_values(ascending=False).reset_index()
+shap_summary.columns = ['Feature', 'Mean SHAP Value']
+print(shap_summary.head(30))  # top 30 features based on SHAP values
+
+
+
+
+This script:
+
+Sets up the pycaret environment with feature selection enabled to choose the top 30 features.
+Trains a RandomForest classifier (you can replace 'rf' with other tree-based models if needed).
+Evaluates the model on multiple metrics.
+Interprets the model using SHAP.
+Generates a table with the mean absolute SHAP values for each feature.
+Make sure to replace 'your_dataset_path_here.csv' with the path to your dataset.
+
+This solution uses a RandomForest classifier, but you can use any tree-based model supported by pycaret and SHAP, 
+such as Decision Tree ('dt'), Extra Trees ('et'), or LightGBM ('lightgbm'). Adjust as per your needs.
