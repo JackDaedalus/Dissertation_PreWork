@@ -10,7 +10,8 @@
 	alternatively
 	
 	- compare explanation cluster label in largest cluster to predicted class label
-	- Take ratio of majority predicted class label to minority class as the stability measure (the higher the value the closer the explanation clusters map to predicted results).	
+	- Take ratio of majority predicted class label to minority class as the stability measure (the higher the value the closer the explanation clusters map to 
+	predicted results).	
 	
-Question: how do we know which explanations cluster equates to 'fraud' and which cluster equates to 'non-fraud'? If dataset is a 50:50 label split and we use two clusters then 
-we can just pick one cluster (use the largest).
+Question: how do we know which explanations cluster equates to 'fraud' and which cluster equates to 'non-fraud'? If dataset is a 50:50 label split and we use 
+two clusters then we can just pick one cluster (use the largest).
