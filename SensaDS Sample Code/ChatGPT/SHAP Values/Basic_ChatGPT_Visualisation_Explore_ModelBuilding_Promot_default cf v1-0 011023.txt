@@ -1,6 +1,8 @@
 Generate some interesting visuals from this dataset. 
 
-Also make recommendations on what Machine Learning routines would have to be applied to this dataset in order to generate a binary classification model 
+Also 
+
+Make recommendations on what Machine Learning routines would have to be applied to this dataset in order to generate a binary classification model 
 based on the target feature of 'default' and using a Random Forest algorithm. 
 
 Implement these recommendations in Python code that would be inserted in a Pythin Notebook.
