@@ -1,0 +1,12 @@
+Generate some interesting visuals from this dataset. 
+
+Also make recommendations on what Machine Learning routines would have to be applied to this dataset in order to generate a binary classification model 
+based on the target feature of 'default' and using a Random Forest algorithm. 
+
+Implement these recommendations in Python code that would be inserted in a Pythin Notebook.
+
+After those recommendations, generate the python code that would feature engineer this dataset, use a 70:30 split for training and test data, 
+and create a predictive ML model with RF. 
+
+Generate some model metrics to show performance of model on the test data. Make the presentation of those metrics as aesthetically pleasing and 
+as easy to read as possible via the python code output, replicating how a Python code notebook would generate such output.
