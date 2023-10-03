@@ -1,0 +1,23 @@
+def calc_identity(exp1, exp2):
+    # Calculate the L2 (Euclidean) distance between exp1 and exp2 along axis 1
+    # This will compute the distance between corresponding rows of exp1 and exp2
+    dis = np.linalg.norm(exp1-exp2, axis=1)
+    
+    # Get the total number of distances computed (i.e., total number of rows)
+    total = dis.shape[0]
+    
+    # Identify the number of distances that are very close to zero (i.e., almost identical rows)
+    # 1e-8 is a small threshold to account for possible floating-point errors
+    true = np.where(abs(dis)<1e-8)[0].shape[0]
+    
+    # Calculate the proportion of non-identical rows
+    score = (total-true)/total
+    
+    # Return the percentage of non-identical rows
+    return score*100
+
+
+
+In summary, the function calc_identity takes two 2D numpy arrays (exp1 and exp2) as inputs and 
+computes the percentage of rows that are not almost identical (based on a threshold) between the two arrays. 
+It uses the L2 (Euclidean) distance to measure similarity.
