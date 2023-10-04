@@ -1,0 +1,116 @@
+Identity Function Output for ChatGPT
+
+
+1. For each instance � t in the feature dataframe, compute the Euclidean distance to all other instances and identify the next nearest instance 
+� i.
+2. In parallel, for the corresponding SHAP values of instance � t, compute the Euclidean distance to all other SHAP values and identify the nearest instance.
+3. Check if the row numbers identified in steps 1 and 2 match.
+4. Count the number of matches.
+5. Compute the percentage of matches.
+
+Here's the Python function for the Kubeflow Notebook:
+
+
+from scipy.spatial import distance
+
+def match_percentage(features_df, shap_values_df):
+    # Ensure the dataframes have the same number of rows
+    assert len(features_df) == len(shap_values_df), "Dataframes must have the same number of rows"
+    
+    # Initialize a counter for matches
+    match_count = 0
+    
+    # Iterate over each instance (t) in the feature dataframe
+    for t in range(len(features_df)):
+        # Compute Euclidean distances from instance (t) to all other instances in the feature dataframe
+        feature_distances = distance.cdist(features_df.iloc[[t], 1:], features_df.drop(columns='Row_Count'), metric='euclidean')
+        
+        # Identify the row number of the next nearest instance (i) in terms of feature distance
+        # We use [1] to get the second nearest instance since the nearest is the instance itself (distance = 0)
+        nearest_feature_row = features_df.iloc[feature_distances.argsort()[0][1]]['Row_Count']
+        
+        # Compute Euclidean distances from SHAP values of instance (t) to all other SHAP values
+        shap_distances = distance.cdist(shap_values_df.iloc[[t], 1:], shap_values_df.drop(columns='Row_Count'), metric='euclidean')
+        
+        # Identify the row number of the nearest instance in terms of SHAP value distance
+        nearest_shap_row = shap_values_df.iloc[shap_distances.argsort()[0][1]]['Row_Count']
+        
+        # Check if the nearest feature instance and nearest SHAP value instance have the same row number
+        if nearest_feature_row == nearest_shap_row:
+            match_count += 1
+
+        # Print the current iteration and match count for debugging purposes
+        print(f"Checked instance {t+1}/{len(features_df)}. Current matches: {match_count}")
+
+    # Calculate the percentage of matches
+    match_percentage = (match_count / len(features_df)) * 100
+    print(f"Match Percentage: {match_percentage:.2f}%")
+    
+    return match_percentage
+
+# Call the function to see the results
+match_percentage(features_df, shap_values_df)
+
+
+This function will compute the percentage of matches where the nearest feature instance and nearest SHAP value instance have the same row number. 
+The function prints the match percentage in the "xx.xx%" format before returning the value.
+
+
+
+
+
+
+
+Sure, I'll add a print statement for debugging that shows the distance between instance t and i for each feature 
+and SHAP value instance calculation. Here's the modified function:
+
+
+from scipy.spatial import distance
+
+def match_percentage(features_df, shap_values_df):
+    # Ensure the dataframes have the same number of rows
+    assert len(features_df) == len(shap_values_df), "Dataframes must have the same number of rows"
+    
+    # Initialize a counter for matches
+    match_count = 0
+    
+    # Iterate over each instance (t) in the feature dataframe
+    for t in range(len(features_df)):
+        # Compute Euclidean distances from instance (t) to all other instances in the feature dataframe
+        feature_distances = distance.cdist(features_df.iloc[[t], 1:], features_df.drop(columns='Row_Count'), metric='euclidean')
+        
+        # Identify the row number of the next nearest instance (i) in terms of feature distance
+        # We use [1] to get the second nearest instance since the nearest is the instance itself (distance = 0)
+        nearest_feature_index = feature_distances.argsort()[0][1]
+        nearest_feature_row = features_df.iloc[nearest_feature_index]['Row_Count']
+        nearest_feature_distance = feature_distances[0][nearest_feature_index]
+        
+        # Compute Euclidean distances from SHAP values of instance (t) to all other SHAP values
+        shap_distances = distance.cdist(shap_values_df.iloc[[t], 1:], shap_values_df.drop(columns='Row_Count'), metric='euclidean')
+        
+        # Identify the row number of the nearest instance in terms of SHAP value distance
+        nearest_shap_index = shap_distances.argsort()[0][1]
+        nearest_shap_row = shap_values_df.iloc[nearest_shap_index]['Row_Count']
+        nearest_shap_distance = shap_distances[0][nearest_shap_index]
+        
+        # Check if the nearest feature instance and nearest SHAP value instance have the same row number
+        if nearest_feature_row == nearest_shap_row:
+            match_count += 1
+        
+        # Print distances and current matches for debugging purposes
+        print(f"Instance {t+1}: Feature Distance: {nearest_feature_distance:.4f}, SHAP Value Distance: {nearest_shap_distance:.4f}")
+        print(f"Checked instance {t+1}/{len(features_df)}. Current matches: {match_count}")
+
+    # Calculate the percentage of matches
+    match_percentage = (match_count / len(features_df)) * 100
+    print(f"Match Percentage: {match_percentage:.2f}%")
+    
+    return match_percentage
+
+# Call the function to see the results
+match_percentage(features_df, shap_values_df)
+
+
+
+The added print statement shows the Euclidean distance between the current instance t and the nearest instance i for both the features and SHAP values. 
+This will provide insights into the distances that the function is computing during its execution.

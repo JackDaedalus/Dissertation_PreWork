@@ -1,0 +1,180 @@
+
+1. Use k-means clustering to cluster the SHAP values into two clusters.
+2. Label the clusters as '0' and '1'.
+3. Create a new dataframe with an additional column indicating the cluster assignment.
+4. Assign the actual target value from y_test to each instance in this new dataframe.
+5. Calculate the percentage of rows where the target class '0' matches the cluster value '0'.
+6. Print and return this percentage.
+
+
+Here's the function for your Kubeflow Python Notebook:
+
+
+
+
+from sklearn.cluster import KMeans
+
+def calc_stability(shap_values_df):
+    # Step 1: Use k-means clustering to cluster the SHAP values into two clusters
+    kmeans = KMeans(n_clusters=2, random_state=42).fit(shap_values_df)
+    
+    # Step 2: Get the cluster labels
+    cluster_labels = kmeans.labels_
+    
+    # Step 3: Create a new dataframe with an additional column indicating the cluster assignment
+    clustered_df = shap_values_df.copy()
+    clustered_df['Cluster'] = cluster_labels
+    
+    # Rename the clusters to '0' and '1' based on the cluster centers
+    # Assume cluster with lower mean SHAP value is '0' and the other is '1'
+    if clustered_df[clustered_df['Cluster'] == 0].drop(columns='Cluster').mean().mean() > clustered_df[clustered_df['Cluster'] == 1].drop(columns='Cluster').mean().mean():
+        clustered_df['Cluster'] = clustered_df['Cluster'].map({0: '1', 1: '0'})
+    
+    # Step 4: Assign the actual target value from y_test to the dataframe
+    clustered_df['Actual'] = y_test.values
+    
+    # Step 5: Calculate the percentage of rows where the target class '0' matches the cluster value '0'
+    matches = clustered_df[(clustered_df['Cluster'] == '0') & (clustered_df['Actual'] == 0)].shape[0]
+    total_class_0 = clustered_df[clustered_df['Actual'] == 0].shape[0]
+    
+    # Calculate the percentage of matches
+    match_percentage = (matches / total_class_0) * 100
+    
+    # Print the results for debugging
+    print(f"Total Class '0' Instances: {total_class_0}")
+    print(f"Matching Cluster '0' Instances: {matches}")
+    print(f"Match Percentage: {match_percentage:.2f}%")
+    
+    return match_percentage
+
+# Call the function with features_df as input
+calc_stability(features_df.drop(columns='Row_Count'))
+
+
+
+This function first clusters the SHAP values and then calculates the percentage of target class '0' instances that 
+match the cluster label '0'. The function prints the results for debugging purposes and returns the match percentage.
+
+
+
+
+
+Certainly! I'll add a print statement in the function to display the number of instances assigned to each cluster. 
+Here's the modified function:
+
+
+from sklearn.cluster import KMeans
+
+def calc_stability(shap_values_df):
+    # Step 1: Use k-means clustering to cluster the SHAP values into two clusters
+    kmeans = KMeans(n_clusters=2, random_state=42).fit(shap_values_df)
+    
+    # Step 2: Get the cluster labels
+    cluster_labels = kmeans.labels_
+    
+    # Step 3: Create a new dataframe with an additional column indicating the cluster assignment
+    clustered_df = shap_values_df.copy()
+    clustered_df['Cluster'] = cluster_labels
+    
+    # Rename the clusters to '0' and '1' based on the cluster centers
+    # Assume cluster with lower mean SHAP value is '0' and the other is '1'
+    if clustered_df[clustered_df['Cluster'] == 0].drop(columns='Cluster').mean().mean() > clustered_df[clustered_df['Cluster'] == 1].drop(columns='Cluster').mean().mean():
+        clustered_df['Cluster'] = clustered_df['Cluster'].map({0: '1', 1: '0'})
+    
+    # Print the number of instances assigned to each cluster for debugging
+    cluster_0_count = clustered_df[clustered_df['Cluster'] == '0'].shape[0]
+    cluster_1_count = clustered_df[clustered_df['Cluster'] == '1'].shape[0]
+    print(f"Number of Instances in Cluster '0': {cluster_0_count}")
+    print(f"Number of Instances in Cluster '1': {cluster_1_count}")
+    
+    # Step 4: Assign the actual target value from y_test to the dataframe
+    clustered_df['Actual'] = y_test.values
+    
+    # Step 5: Calculate the percentage of rows where the target class '0' matches the cluster value '0'
+    matches = clustered_df[(clustered_df['Cluster'] == '0') & (clustered_df['Actual'] == 0)].shape[0]
+    total_class_0 = clustered_df[clustered_df['Actual'] == 0].shape[0]
+    
+    # Calculate the percentage of matches
+    match_percentage = (matches / total_class_0) * 100
+    
+    # Print the results for debugging
+    print(f"Total Class '0' Instances: {total_class_0}")
+    print(f"Matching Cluster '0' Instances: {matches}")
+    print(f"Match Percentage: {match_percentage:.2f}%")
+    
+    return match_percentage
+
+# Call the function with features_df as input
+calc_stability(features_df.drop(columns='Row_Count'))
+
+
+
+I added a section after the clustering step to count and print the number of instances assigned to each cluster. 
+This will help you understand the distribution of the data between the two clusters.
+
+
+
+
+
+Alright! In order to correctly match the y_test values with the rows in the reduced set of features and associated SHAP values, 
+we need to ensure we're only considering the appropriate subset of y_test.
+
+Given that we previously selected a subset of X_test and generated SHAP values for those specific instances, we'll ensure the 
+y_test values correspond exactly to those rows.
+
+Here's the amended function:
+
+
+
+
+from sklearn.cluster import KMeans
+
+def calc_stability(shap_values_df, selected_indices):
+    # Step 1: Use k-means clustering to cluster the SHAP values into two clusters
+    kmeans = KMeans(n_clusters=2, random_state=42).fit(shap_values_df)
+    
+    # Step 2: Get the cluster labels
+    cluster_labels = kmeans.labels_
+    
+    # Step 3: Create a new dataframe with an additional column indicating the cluster assignment
+    clustered_df = shap_values_df.copy()
+    clustered_df['Cluster'] = cluster_labels
+    
+    # Rename clusters so that the largest cluster is always labeled '0'
+    if sum(cluster_labels) > len(cluster_labels) / 2:
+        clustered_df['Cluster'] = clustered_df['Cluster'].map({0: '1', 1: '0'})
+    
+    # Print the number of instances assigned to each cluster for debugging
+    cluster_0_count = clustered_df[clustered_df['Cluster'] == '0'].shape[0]
+    cluster_1_count = clustered_df[clustered_df['Cluster'] == '1'].shape[0]
+    print(f"Number of Instances in Cluster '0': {cluster_0_count}")
+    print(f"Number of Instances in Cluster '1': {cluster_1_count}")
+    
+    # Step 4: Assign the appropriate subset of y_test values to the dataframe based on the selected indices
+    clustered_df['Actual'] = y_test[selected_indices].values
+    
+    # Step 5: Calculate the percentage of rows where the target class '0' matches the cluster value '0'
+    matches = clustered_df[(clustered_df['Cluster'] == '0') & (clustered_df['Actual'] == 0)].shape[0]
+    total_class_0 = clustered_df[clustered_df['Actual'] == 0].shape[0]
+    
+    # Calculate the percentage of matches
+    match_percentage = (matches / total_class_0) * 100
+    
+    # Print the results for debugging
+    print(f"Total Class '0' Instances: {total_class_0}")
+    print(f"Matching Cluster '0' Instances: {matches}")
+    print(f"Match Percentage: {match_percentage:.2f}%")
+    
+    return match_percentage
+
+# Call the function with features_df as input
+selected_indices = features_df.index  # This assumes the selected rows from X_test are stored in features_df
+calc_stability(features_df.drop(columns='Row_Count'), selected_indices)
+
+
+In this amended function, I've added an additional argument, selected_indices, which represents the indices of the selected rows from X_test. 
+This ensures the corresponding y_test values are correctly matched with the reduced set of features and associated SHAP values.
+
+
+
+
