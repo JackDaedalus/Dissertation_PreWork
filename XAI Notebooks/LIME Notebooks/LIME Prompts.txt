@@ -6,12 +6,19 @@ binary classification model using a Random Forest algorithm to predict future fr
 
 Apply useful Machine Learning feature engineering to the dataset and balance the dataset 50:50 between classification targets.
 
-Apply Cross validation techniques to tune the hyperparameters of the Radom Forest algorithm.
+Apply Cross validation techniques to tune the hyperparameters of the Random Forest algorithm. Limit the parameters so that the 
+Kubeflow Notebook is not spending too long on the cross validation process.
 
-Generate a series of metrics on model performance. Please the metrics into a seperate dataframe and then present
-this output in a very aesth8ically pleasing manner using the dataframe.
 
-Once the model has been created generate LIME values for the first 10 instances in the Test dataset. Ensure every line of Python code 
+
+
+Generate a series of metrics on the previous model performance. 
+Present the metrics into a separate dataframe and then present this output in a very aesthetically pleasing manner using the dataframe.
+
+
+
+
+Now that the model has been created generate LIME values for the first 10 instances in the Test dataset. Ensure every line of Python code 
 is clearly commented with a description of what operations are taking place, and why.
 
 Print the output of key results in an easy-to-read format.
