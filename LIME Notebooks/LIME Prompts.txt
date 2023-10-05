@@ -1,0 +1,23 @@
+LIME Prompts
+
+
+Using this dataset, which has a target variable of 'default', generate Python code for a Kubelfow Notebook to generate a 
+binary classification model using a Random Forest algorithm to predict future fraud.
+
+Apply useful Machine Learning feature engineering to the dataset and balance the dataset 50:50 between classification targets.
+
+Apply Cross validation techniques to tune the hyperparameters of the Radom Forest algorithm.
+
+Generate a series of metrics on model performance. Please the metrics into a seperate dataframe and then present
+this output in a very aesth8ically pleasing manner using the dataframe.
+
+Once the model has been created generate LIME values for the first 10 instances in the Test dataset. Ensure every line of Python code 
+is clearly commented with a description of what operations are taking place, and why.
+
+Print the output of key results in an easy-to-read format.
+
+Provide a narrative of what the LIME values are telling the user about three random instances, one of which has a target default value of '1' 
+and the other two being '0'.
+
+
+
