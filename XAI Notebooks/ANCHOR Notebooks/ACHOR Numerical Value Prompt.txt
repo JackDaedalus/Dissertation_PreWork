@@ -13,6 +13,6 @@ Generate Python code for a Kubeflow Notebook to extend the existing Phyton code 
 
 Ensure every line is clearly commented with the exact steps being executed and why.
 
-Generate two output files for these dataframes but limit the output to six random features
-and their associated ANCHOR feature values, but with two instances that have a target values of 
-'1' and four with a target value of '0'.
+Generate two output files for these dataframes but limit the output to 15 random features
+and their associated ANCHOR feature values, but with three instances that have a target values of 
+'1' and twelve with a target value of '0'.
