@@ -1,0 +1,13 @@
+Using this dataset generate the Python code to build an ML model for a binary classification problem to predict values of the 'default' target variables.  
+
+Perform some basic feature engineering and perform one-hot encoding of categorical variables.
+
+Downsample the majority class to the same number
+of instances as the minority class. Split the data 70:30 for testing and training.
+
+Suffix the training datasets with '_downsampled'.
+
+Use a Random Forest algorithm and produce a very aesthically pleasing output of the performance
+metrics of the model.
+
+Name the final model as 'model'.

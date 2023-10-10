@@ -1,0 +1,18 @@
+In these ANCHOR examples for a Python Notebook generate two dataframes,
+one representing the individual instance features and the other a dataframe with corresponding 
+rows to the feature dataframe that contain a sequence of columns based on each instance
+feature that represent a numerical conversion of the ANCHOR feature values.
+
+The dataframe for the ANCHOR feature values must have a consistent number of columns per 
+features so that a Eulidean distance calculation can be correctly carried out on any two 
+instances in the ANCHOR feature values dataframe. In other words, each feature column must 
+have a consistent number of corresponding column cells across all the instances in the ANCHOR
+feature values dataframe.
+
+Generate Python code for a Kubeflow Notebook to extend the existing Phyton code above. 
+
+Ensure every line is clearly commented with the exact steps being executed and why.
+
+Generate two output files for these dataframes but limit the output to six random features
+and their associated ANCHOR feature values, but with two instances that have a target values of 
+'1' and four with a target value of '0'.
