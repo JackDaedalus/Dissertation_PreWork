@@ -1,3 +1,16 @@
+For the RF model built above in Python, select a random sample 
+of 15 instances in the test data,10 for Class '0' and 5 for 
+Class '1', generate ANCHOR values as explainers for the predicted 
+default values in the test dataset.
+
+Present these ANCHOR values in an easily understood and pleasant 
+on the eye format.  Comment each line of Python code with as much 
+detail as practical. Output the ANCHOR values to a CSV file. 
+After the code generation provide as much narrative detail 
+as possible.
+
+
+
 In these ANCHOR examples for a Python Notebook generate two dataframes,
 one representing the individual instance features and the other a dataframe with corresponding 
 rows to the feature dataframe that contain a sequence of columns based on each instance
