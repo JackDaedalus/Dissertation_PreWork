@@ -1,0 +1,28 @@
+The first file called 'instance_features.csv' is a random selection 
+from the test data used for the above model predictions.
+
+The other file called 'anchor_explantions.csv' contains the ANCHOR values/weiths
+generated as an explainer for the selection of features in the 'instance_features.csv'
+file.
+
+The 'anchor_explantions.csv' contains the index of the instance features in the test data
+and a text description of the ANCHOR explanations in the column named 'Anchor Explanation'.
+
+
+Convert this file into a new dataframe that represents a numerical conversion of the ANCHOR
+description in the column named 'Anchor Explanation'.
+
+The dataframe for the ANCHOR explanation values must have a consistent number of columns 
+so that a Eulidean distance calculation can be correctly carried out on any two 
+instances in the ANCHOR feature values dataframe, regardless of the nummber of weights in
+the explanation. 
+
+In other words, each column must have a consistent number of corresponding column cells 
+across all the instances in the ANCHOR values dataframe. Each individual record in this 
+numberical ANCHOR dataframe must uniquely match a single instance in the feature file.
+
+Generate Python code for a Kubeflow Notebook to extend the existing Phyton code above. 
+
+Ensure every line is clearly commented with the exact steps being executed and why.
+
+Add a comprehensive narrative at the end of the code block.

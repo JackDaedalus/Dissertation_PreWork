@@ -7,20 +7,35 @@ Present these ANCHOR values in an easily understood and pleasant
 on the eye tabular output format for the Python Kubeflow Notebook
 in which I am writing my Python code. 
 
-Create a second tabular format what shows an equally appealing 
-output in my Python Notebook that shows the ANCHOR values and the
-feature details for each instance on a single row, across which I
-can scroll.
+Also generate these values into an output CSV file.
 
-Comment each line of Python code with as much detail as practical. 
-
-Output the ANCHOR values to a CSV file. Output the feature details 
-for each corresponding instance for which the ANCHOR Values were
-created in a seperate CSV file.
+Comment each line of Python code with as much detail as practical.
 
 After the code generation provide as much narrative detail 
 as possible.
 
+
+----
+
+
+Create another tabular format what shows an equally appealing 
+output in my Python Notebook that shows the ANCHOR values for each instance
+alongisde the relevant feature details for same instance on a single row, 
+across which I can scroll.
+
+Comment each line of Python code with as much detail as practical. 
+
+Output the ANCHOR values to a CSV file. 
+
+Output the feature details for each corresponding instance for which 
+the ANCHOR Values were created in a seperate CSV file.
+
+After the code generation provide as much narrative detail 
+as possible.
+
+
+
+----
 
 
 Taking these previous 15 ANCHOR examples, write code for my Python 
