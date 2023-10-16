@@ -1,0 +1,69 @@
+For the RF model built above in Python, select a random sample 
+of 15 instances in the test data, 10 for Class '0' and 5 for 
+Class '1', and generate Diverse Counterfactual Explanations (DICE)
+as explainers for these instances in the test dataset. Add the 
+Diverse Counterfactual Explanations into a dataframe and include 
+the associated target ('default') variable value for each instance
+row,
+
+
+Present these DICE explanations in an easily understood and pleasant 
+on the eye tabular output format for the Python Kubeflow Notebook
+in which I am writing my Python code. 
+
+Also generate these values into an output CSV file.
+
+Comment each line of Python code with as much detail as practical.
+
+After the code generation provide as much narrative detail 
+as possible.
+
+
+----
+
+
+See Ref: https://interpret.ml/DiCE/
+
+
+
+
+Create another tabular format what shows an equally appealing 
+output in my Python Notebook that shows the ANCHOR values for each instance
+alongisde the relevant feature details for same instance on a single row, 
+across which I can scroll.
+
+Comment each line of Python code with as much detail as practical. 
+
+Output the ANCHOR values to a CSV file. 
+
+Output the feature details for each corresponding instance for which 
+the ANCHOR Values were created in a seperate CSV file.
+
+After the code generation provide as much narrative detail 
+as possible.
+
+
+
+----
+
+
+Taking these previous 15 ANCHOR examples, write code for my Python 
+Notebook to generate two dataframes,one representing the individual 
+instance features and the other a dataframe with corresponding 
+rows to the feature dataframe that contain a sequence of columns 
+based on each instance feature that represent a numerical conversion
+of the ANCHOR feature values.
+
+The dataframe for the ANCHOR feature values must have a consistent number of columns per 
+features so that a Eulidean distance calculation can be correctly carried out on any two 
+instances in the ANCHOR feature values dataframe. In other words, each feature column must 
+have a consistent number of corresponding column cells across all the instances in the ANCHOR
+feature values dataframe.
+
+Generate Python code for a Kubeflow Notebook to extend the existing Phyton code above. 
+
+Ensure every line is clearly commented with the exact steps being executed and why.
+
+Generate two output files for these dataframes but limit the output to 15 random features
+and their associated ANCHOR feature values, but with three instances that have a target values of 
+'1' and twelve with a target value of '0'.
