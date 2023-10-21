@@ -1,0 +1,19 @@
+Using this dataset generate the Python code to build an ML model for a binary classification problem 
+to predict values of the 'default' target variables.  
+
+Perform some basic feature engineering and perform one-hot encoding of categorical variables. Name the
+encoded dataframe as 'df_encoded'.
+
+Downsample the majority class to the same number of instances as the minority class. 
+
+Suffix the training datasets with '_downsampled'.
+
+Create a detection model based on an Artificial Neural Network. Apply the DiCE (Diverse Counterfactual 
+Explanations) framework to generate Counterfactual explanations for the model behaviour.
+
+Name the final model as 'model'.
+
+Visualize the first five counterfactual explanations.
+
+
+

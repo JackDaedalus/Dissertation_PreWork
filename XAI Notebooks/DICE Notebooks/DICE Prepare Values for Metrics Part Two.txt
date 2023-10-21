@@ -1,0 +1,11 @@
+Generate a Python function that takes the first twenty instances from the 'df_encoded' 
+dataframe and generates a single corresponding counterfactual (DiCE) explanation for each
+original dataframe instance.
+
+Store these counterfactual explanations in a seperate dataframe. 
+
+Each instance in the original 'df_encoded' dataframe must have a corresponding counterfactual 
+explanation at the matching index in the counterfactual dataframe.
+
+The output from the function will be both dataframes.
+ 
