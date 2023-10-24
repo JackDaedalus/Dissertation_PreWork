@@ -1,19 +1,38 @@
-Using this dataset generate the Python code to build an ML model for a binary classification problem 
-to predict values of the 'default' target variables.  
+Using this dataset generate the Python code to build an ML model for a binary classification 
+problem to predict values of the 'default' target variables.  
 
-Perform some basic feature engineering and perform one-hot encoding of categorical variables. Name the
-encoded dataframe as 'df_encoded'.
+Perform some basic feature engineering and perform one-hot encoding of categorical variables. 
+
+Name the encoded dataframe as 'df_encoded'.
 
 Downsample the majority class to the same number of instances as the minority class. 
 
 Suffix the training datasets with '_downsampled'.
 
-Create a detection model based on an Artificial Neural Network. Apply the DiCE (Diverse Counterfactual 
-Explanations) framework to generate Counterfactual explanations for the model behaviour.
+Even though TensorFlow/Keras is not available in this environment, create the Python Notebook
+code to generate a detection model based on an Artificial Neural Network using TensorFlow/Keras. 
 
 Name the final model as 'model'.
 
-Visualize the first five counterfactual explanations.
+
+
+Now that the model has been created generate LIME explanation values for the data.
+
+Display LIME values for first feature row.
+
+Ensure every line of Python code is clearly commented with a description of what 
+operations are taking place, and why.
+
+Print the output of key results in an easy-to-read format.
+
+
+
+Apply the DiCE (Diverse Counterfactual 
+Explanations) framework to generate Counterfactual explanations for the model behaviour.
+
+
+
+Visualize the first 5 counterfactual explanations.
 
 
 
