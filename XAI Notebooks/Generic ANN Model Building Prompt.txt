@@ -7,12 +7,23 @@ Name the encoded dataframe as 'df_encoded'.
 
 Downsample the majority class to the same number of instances as the minority class. 
 
-Suffix the training datasets with '_downsampled'.
+Suffix the training and test datasets with '_downsampled'.
 
 Even though TensorFlow/Keras is not available in this environment, create the Python Notebook
 code to generate a detection model based on an Artificial Neural Network using TensorFlow/Keras. 
 
 Name the final model as 'model'.
+
+
+Now that the model has been created generate XAI ANCHOR values/weigths 
+generated as an explainer for the data.
+
+Display ANCHOR values/weigths for the first five feature rows.
+
+Ensure every line of Python code is clearly commented with a description of what 
+operations are taking place, and why.
+
+Print the output of key results in an easy-to-read format.
 
 
 
