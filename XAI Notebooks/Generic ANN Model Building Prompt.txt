@@ -14,6 +14,10 @@ code to generate a detection model based on an Artificial Neural Network using T
 
 Name the final model as 'model'.
 
+Now that the model has been created generate SHAP values as an explainer for the data by scoring 
+each feature.
+
+
 
 Now that the model has been created generate XAI ANCHOR values/weigths 
 generated as an explainer for the data.
