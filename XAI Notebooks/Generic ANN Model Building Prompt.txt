@@ -5,17 +5,29 @@ Perform some basic feature engineering and perform one-hot encoding of categoric
 
 Name the encoded dataframe as 'df_encoded'.
 
+Scale the data, using either a Pipeline with a StandardScaler in a preprocessing stage or a similar 
+Python code process.
+
 Downsample the majority class to the same number of instances as the minority class. 
 
 Suffix the training and test datasets with '_downsampled'.
 
 Even though TensorFlow/Keras is not available in this environment, create the Python Notebook
-code to generate a detection model based on an Artificial Neural Network using TensorFlow/Keras. 
+code to generate a detection model based on an Artificial Neural Network using TensorFlow/Keras.
+
+Use the most up to date version of TensorFlow/Keras that is available
 
 Name the final model as 'model'.
 
 Now that the model has been created generate SHAP values as an explainer for the data by scoring 
 each feature.
+
+Use a Deep Learning SHAP approach to generate the SHAP values.
+
+Ensure that any SHAP output explicitly names the features by their column names.
+
+
+
 
 
 

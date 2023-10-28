@@ -1,0 +1,22 @@
+Generate a Python function that takes the first twenty-five instances from the 'df_encoded' 
+dataframe above and generates the SHAP Values explanations for each
+original dataframe instance.
+
+Store these SHAP values explanations in a seperate dataframe. 
+
+Each instance in the original 'df_encoded' dataframe must have a corresponding SHAP value 
+explanation at the matching index in the counterfactual dataframe.
+
+The output from the function will both be dataframes.
+
+Output the dataframes to seperate csv files.
+
+
+
+Rewrite the above function so that a single dataframe and a single csv file for the shap values 
+is always produced regardless of whether it is a positive or negative class. The rows in the 
+dataframe produced by the function for the shap values must always correspond to the same 
+instance row in the instance dataframe. 
+
+That is, any given row in the instance dataframe has its shap value in the same row in the 
+shap dataframe. The same logic applies to both csv files.
