@@ -1,0 +1,79 @@
+Other Papers
+
+2 - [13] Bernease Herman. 2017. The Promise and Peril of Human Evaluation for Model
+Interpretability. CoRR abs/1711.07414 (2017).
+2 - [19] Zachary C Lipton. 2016. The mythos of model interpretability. arXiv preprint
+arXiv:1606.03490 (2016).
+
+
+
+
+
+Most of the research compares
+methods using either proxy measures, that do not directly relate
+to interpretability by humans, as e.g. [27],
+
+2 - [27] Wojciech Samek, Alexander Binder, Grégoire Montavon, Sebastian Lapuschkin,
+and Klaus-Robert Müller. 2017. Evaluating the Visualization of What a Deep
+Neural Network Has Learned. IEEE Trans. Neural Netw. Learning Syst. 28, 11
+(2017), 2660–2673. https://doi.org/10.1109/TNNLS.2016.2599820
+
+
+
+
+qualitative measures
+that render comparisons of results across studies difficult [32].
+
+2 - [32] Erik Strumbelj and Igor Kononenko. 2010. An Efficient Explanation of Individual
+Classifications using Game Theory. Journal of Machine Learning Research 11
+(2010), 1–18. https://doi.org/10.1145/1756006.1756007
+
+
+
+
+RESP Scores?
+
+5 - [6] Leopoldo E. Bertossi, Jordan Li, Maximilian Schleich, Dan Suciu, and Zografoula
+Vagena. 2020. Causality-based Explanation of Classification Outcomes. In Fourth
+Workshop on Data Management for End-To-End Machine Learning (DEEM). 6:1–
+6:10
+
+
+
+
+5- The FICO challenge was designed to evaluate such methods
+using a home loan application dataset, with a known label (high or
+low risk) for each application, but it relies on manual evaluation of
+returned explanations by real-world data scientists [26]. As a result,
+it remains hard to compare different ED methods due to the lack of
+ground truth explanations and automated evaluation procedures.
+
+5 - [26] FICO. 2018. Explainable Machine Learning Challenge. https://community.fico.
+com/s/explainable-machine-learning-challenge Accessed: 2021-07-27.
+
+
+
+
+
+9 - [17] Hao-Fei Cheng, Ruotong Wang, Zheng Zhang, Fiona O’Connell, Terrance Gray, F. Maxwell Harper, and Haiyi Zhu. 2019. Explaining
+Decision-Making Algorithms through UI: Strategies to Help Non-Expert Stakeholders. In Proceedings of the 2019 CHI Conference on
+Human Factors in Computing Systems. ACM, New York, NY, 1ś12. https://doi.org/10.1145/3290605.3300789
+
+
+9 - [10] Reuben Binns, Max Van Kleek, Michael Veale, Ulrik Lyngs, Jun Zhao, and Nigel Shadbolt. 2018. ’It’s reducing a human being to a
+percentage’; perceptions of justice in algorithmic decisions. In Proceedings of the 2018 CHI Conference on Human Factors in Computing
+Systems. ACM, New York, NY, 1ś14. https://doi.org/10.1145/3173574.3173951
+
+
+
+
+
+10 - [14] Gregory Plumb, Denali Molitor, and Ameet S. Talwalkar. Model agnostic supervised
+local explanations. In Advances in Neural Information Processing Systems
+31: Annual Conference on Neural Information Processing Systems 2018, NeurIPS
+2018, 3-8 December 2018, Montréal, Canada., pages 2520–2529, 2018.
+
+
+10 - [15] David Alvarez-Melis and Tommi S. Jaakkola. On the robustness of interpretability
+methods. CoRR, abs/1806.08049, 2018.
+
