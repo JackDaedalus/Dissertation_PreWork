@@ -1,7 +1,6 @@
 Other Papers
 
-2 - [13] Bernease Herman. 2017. The Promise and Peril of Human Evaluation for Model
-Interpretability. CoRR abs/1711.07414 (2017).
+
 2 - [19] Zachary C Lipton. 2016. The mythos of model interpretability. arXiv preprint
 arXiv:1606.03490 (2016).
 
