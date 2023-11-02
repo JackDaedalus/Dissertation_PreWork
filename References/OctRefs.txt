@@ -1,0 +1,135 @@
+@article{Alvarez_Melis_Jaakkola, 
+    title={On the Robustness of Interpretability Methods},
+    volume={6}, 
+    DOI={10.48550/arXiv.1806.08049}, 
+    number={52}, 
+    journal={2018 ICML Workshop on Human Interpretability in Machine Learning}, 
+    author={D. Alvarez-Melis and T.S. Jaakkola}, 
+    year={2018}, 
+    pages={138–160}} 
+	
+	
+@article{Alvarez_Melis_Jaakkola, 
+    title={On the Robustness of Interpretability Methods},
+    DOI={10.48550/arXiv.1806.08049}, 
+    journal={2018 ICML Workshop on Human Interpretability in Machine Learning}, 
+    author={D. Alvarez-Melis and T.S. Jaakkola}, 
+    year={2018}} 
+	
+@article{Chromik_Eiband_Buchner_Krüger_Butz,  
+    title={I think I get your point, AI! The illusion of explanatory depth in explainable AI},
+    DOI={10.1145/3397481.3450644}, 
+    journal={26th International Conference on Intelligent User Interfaces}, 
+    author={M.Chromik, M.Eiband, F.Buchner, A.Krüger, A.Butz}, 
+    year={2021}} 	
+	
+@article{Hanafy_Ming,  
+    title={Classification of the insureds using Integrated Machine Learning Algorithms: A comparative study},
+    volume={36}, 
+    DOI={10.1080/08839514.2021.2020489}, 
+    journal={Applied Artificial Intelligence}, 
+    author={M.Hanafy and R.Ming}, 
+    year={2022}}  	
+	
+@article{Jacob_Song_Stiegler_Rad_Diao_Tatbul,  
+    title={Exathlon: A Benchmark for Explainable Anomaly Detection over Time Series. },
+    volume={14}, 
+    DOI={10.14778/3476249.3476307}, 
+    number={11}, 
+    journal={Proceedings of the VLDB Endowment}, 
+    author={V.Jacob, F.Song, A.Stiegler, B.Rad, Y.Diao, and N.Tatbul}, 
+    year={2021}, 
+    pages={2613–2626}} 	
+	
+@article{Martínez_Nadj_Langner_Toreini_Maedche,  
+    title={Does this explanation help? designing local model-agnostic explanation representations and an experimental evaluation using eye-tracking technology},
+    DOI={110.1145/3607145}, 
+    journal={ACM Transactions on Interactive Intelligent Systems}, 
+    author={Martínez, M. A., Nadj, M., Langner, M., Toreini, P., and Maedche, A}, 
+    year={2023}} 
+	
+@article{Moreira_Chou_Velmurugan_Ouyang_Sindhgatta_Bruza,  
+    title={Linda-BN: An interpretable probabilistic approach for demystifying Black-Box Predictive Models},
+    volume={150}, 
+    DOI={10.1016/j.dss.2021.113561}, 
+    journal={Decision Support Systems}, 
+    author={Moreira, C., Chou, Y.-L., Velmurugan, M., Ouyang, C., Sindhgatta, R., and Bruza, P.}, 
+    year={2020}} 	
+	
+@article{Mothilal_Sharma_Tan, 
+    title={Explaining machine learning classifiers through diverse counterfactual explanations},
+    DOI={10.48550/arXiv.1806.08049}, 
+    journal={Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency}, 
+    author={Mothilal, R. K., Sharma, A., and Tan, C.}, 
+    year={2020}} 
+	
+@article{Nascita_Montieri_Aceto_Ciuonzo_Persico_Pescape,  
+    title={Unveiling mimetic: Interpreting deep learning traffic classifiers via xai techniques.},
+    DOI={10.1109/csr51186.2021.9527948}, 
+    journal={2021 IEEE International Conference on Cyber Security and Resilience (CSR)}, 
+    author={Nascita, A., Montieri, A., Aceto, G., Ciuonzo, D., Persico, V., & Pescape, A.}, 
+    year={2021}, 
+    pages={455–460}} 
+	
+	
+@article{Nesvijevskaia_Ouillade_Guilmin_Zucker,  
+    title={The accuracy versus interpretability trade-off in fraud detection model.},
+    volume={3}, 
+    DOI={10.1017/dap.2021.3}, 
+    journal={Data and Policy}, 
+    author={Nesvijevskaia, A., Ouillade, S., Guilmin, P., & Zucker, J.-D.}, 
+    year={2021}} 
+	
+	
+@article{Nguyen_Bouaziz_Valdes_Rosa_Cavalli_Mallouli_Montes_De_Oca, 
+    title={A deep learning anomaly detection framework with explainability and robustness.},
+    DOI={10.1145/3600160.3605052}, 
+    journal={Proceedings of the 18th International Conference on Availability, Reliability and Security.}, 
+    author={Nguyen, M.-D., Bouaziz, A., Valdes, V., Rosa Cavalli, A., Mallouli, W., and Montes De Oca E.}, 
+    year={2023}} 
+	
+	
+@article{Ras_Xie_Van_Gerven_Doran,  
+    title={Explainable Deep Learning: A field guide for the uninitiated.},
+    volume={73}, 
+    DOI={10.1613/jair.1.13200}, 
+    journal={Journal of Artificial Intelligence Research}, 
+    author={Ras, G., Xie, N., Van Gerven, M., & Doran, D.}, 
+    year={2022}, 
+    pages={329–397}} 
+	
+@article{Schlegel_Arnout_El-Assady_Oelke_Keim,  
+    title={Towards a rigorous evaluation of XAI methods on time series.},
+    DOI={10.1109/iccvw.2019.00516}, 
+    journal={2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW). }, 
+    author={Schlegel, U., Arnout, H., El-Assady, M., Oelke, D., & Keim, D. A.}, 
+    year={2019}} 	
+	
+@article{Sullivan_Longo,  
+    title={Explaining deep Q-learning experience replay with Shapley additive explanations},
+    volume={5}, 
+    DOI={10.48550/arXiv.1806.08049}, 
+    number={4}, 
+    journal={Machine Learning and Knowledge Extraction}, 
+    author={Sullivan, R. S., & Longo, L. }, 
+    year={2023}, 
+    pages={1433–1455}} 
+	
+	
+@article{Vouros,  
+    title={Explainable deep reinforcement learning: State of the art and Challenges},
+    volume={55}, 
+    DOI={10.1145/3527448}, 
+    number={5}, 
+    journal={ACM Computing Surveys}, 
+    author={Vouros, G. A.}, 
+    year={2022}, 
+    pages={1–39}} 
+	
+	
+@article{Wu_Wang, 
+    title={Locally interpretable one-class anomaly detection for credit card fraud detection.},
+    DOI={10.1109/taai54685.2021.00014}, 
+    journal={2021 International Conference on Technologies and Applications of Artificial Intelligence (TAAI)}, 
+    author={Wu, T.-Y., & Wang, Y.-T. }, 
+    year={2021}} 
