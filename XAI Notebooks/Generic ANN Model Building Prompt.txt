@@ -5,10 +5,10 @@ Perform some basic feature engineering and perform one-hot encoding of categoric
 
 Name the encoded dataframe as 'df_encoded'.
 
+Downsample the majority class to the same number of instances as the minority class. 
+
 Scale the data, using either a Pipeline with a StandardScaler in a preprocessing stage or a similar 
 Python code process.
-
-Downsample the majority class to the same number of instances as the minority class. 
 
 Suffix the training and test datasets with '_downsampled'.
 
@@ -18,6 +18,9 @@ code to generate a detection model based on an Artificial Neural Network using T
 Use the most up to date version of TensorFlow/Keras that is available
 
 Name the final model as 'model'.
+
+
+
 
 Now that the model has been created generate SHAP values as an explainer for the data by scoring 
 each feature.
