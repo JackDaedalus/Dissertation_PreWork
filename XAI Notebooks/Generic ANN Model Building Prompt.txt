@@ -1,5 +1,5 @@
 Using this dataset generate the Python code to build an ML model for a binary classification 
-problem to predict values of the 'default' target variables.  
+problem to predict values of the 'default' column target variable.  
 
 Perform some basic feature engineering and perform one-hot encoding of categorical variables. 
 
@@ -18,6 +18,8 @@ code to generate a detection model based on an Artificial Neural Network using T
 Use the most up to date version of TensorFlow/Keras that is available
 
 Name the final model as 'model'.
+
+Generate a number of evaluation metrics for the model.
 
 
 
