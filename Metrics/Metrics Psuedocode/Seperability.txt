@@ -1,8 +1,19 @@
+
 "Seperability" - two dissimilar instances muat have dissimilar explanations
+
+Take subset of test data and determine for each individual instance the number of duplicate
+explanations in entire subset, if any.
+
+To measure the separability metric, we choose a subset S of the testing data set that has no duplicates and get
+their explanations. Then for every instance s in S, we compare its explanation with all other explanations
+of instances in S and if such explanation has no duplicate then it satisfies the separability metric.
+
+
 
  - Choose subset S of test data
 		
-		-  ensure no duplicates instances exist. This is a comparison of features, as no explanations have been generated yet.
+		-  ensure no duplicate instances exist. This is a comparison of features, 
+		   as no explanations have been generated yet.
 		-  remove any instances with duplicated features
 		-  generate explanations for each remaining instance in the subset of test data
 		
