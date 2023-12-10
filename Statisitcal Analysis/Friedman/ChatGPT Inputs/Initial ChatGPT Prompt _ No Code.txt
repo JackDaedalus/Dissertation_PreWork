@@ -43,6 +43,14 @@ Generate a Confusion Style matrix graphical comparison of the XAI methods in thi
 Provide a multi-sentence elaboration on the purpose of the 'Statistic' and 'p-value' column
 values in the context of this particular test.
 
+Looking at the histogram graphs produced for The Wilcoxon signed-rank test in the above analysis, 
+a more detailed explanation for the curved line in each graph and what each of the bars in each histogram represent 
+in terms of the XAI methods
+
+
+Provide a more specific analysis of each histogram gram with specific reference to the XAI methods being 
+compared and what the shape of each histogram means for each specific comparison of XAI methods
+
 
 --------------------------------------
 
