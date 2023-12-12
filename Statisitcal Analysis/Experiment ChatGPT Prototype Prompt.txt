@@ -1,0 +1,57 @@
+XAI Experiment
+
+Start with Test Data - 1.4K rows (smaller sample) - Credit Default dataframe - 200 rows
+
+---------------------------------
+Write the Python code for use in a Kubeflow Python notebook with the following operations.
+
+Load a csv file called 'credit_default_experiment_data.csv' into a dataframe.
+
+Split this data into 20 consecutive dataframes and place these dataframes in a list named 'list_df' with a sequential number as an identifier. 
+
+---------------------------------
+
+
+Now, write additional Python code so that for each dataframe in the list just created carry out the following actions;
+
+Check if an XAI results XL spreadsheet called 'XAI_Metrics_Expriments.xls' exists;
+    
+	If not create an empty XL spreadsheet with the name 'XAI_Metrics_Expriments.xls', and then define a variable called ‘Sample’ with an integer value of 1 and print the value of 'Sample' to output.
+    
+	If and XL spreadsheet called 'XAI_Metrics_Expriments.xls' does exist, then read the entries in the spreadsheet in the first column named ‘Sample Number’ and create a variable 
+	in this Python program named ‘Sample’ that is one integer value higher than the highest integer number column named ‘Sample Number’ in the XL, and print this value of 'Sample' to output.
+
+
+---------------------------------
+
+	
+Now, extend the above by writing additional Python code so that the code reads in the dataframe from 'list df' that corresponds to the integer value in the 
+variable named ‘Sample’. 
+
+Assign this dataframe the name 'df_Selected_from_List'.
+
+
+----------------------------------
+
+Now, extend the above by writing additional Python code to create a function called Calc_XAI_Comp_Time() that generates a random time wait. 
+
+Use Python code to measure the time taken to run the ‘Calc_XAI_Comp_Time()’ function and calculate time required and store as variable ‘XAI_Time_Metric_5’.
+
+Create a ‘Calc_XAI_ Metric_One()’ Python function to generate a number between 0.01 and 0.99. Invoke function and stored returned result as ‘XAI_Ident_Metric_1’ variable.
+
+
+
+----------------------------------
+
+Now, extend the above by writing additional Python code to Append a row into the XL spreadsheet 'XAI_Metrics_Expriments.xls' with a column named 'Sample Number' as the first column with the value of the variable named 'Sample', 
+a second column named 'XAI_Identity' with the value in the variable ‘XAI_Ident_Metric_1’, 
+a third column named 'Comp_Efficiency' with the value in the variable variable ‘XAI_Time_Metric_5’,
+and three other columns that contain the first three columns in the first row of the 'df_Selected_from_List' dataframe.
+
+----------------------------------
+
+
+
+
+
+Repeat for other three metrics…
