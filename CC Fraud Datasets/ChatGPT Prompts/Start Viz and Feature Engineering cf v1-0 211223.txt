@@ -1,0 +1,22 @@
+--- Columns with missing data ---
+
+I want to use this loaded dataset in a machine learning Kubeflow Python Notebook to build a credti card fraud neural network detection model. 
+This is a data analytics classification problem, and the target label is the column 'fraud'. To start the process I want Python code to identify
+columns with more than 75% of the data missing.
+
+
+Add Python code to update missing enties in the 'Secure3d' column with a 'U' character values.
+
+Add Python code to update missing enties in the 'DvcPosEntryMode' column with a 'U' character values.
+
+
+Add code to remove any columns with more than 75% missing values
+
+Add code to rmove any rows still with missing data in the dataframe
+
+
+--- Columns with only one data  value ---
+
+Add code to identify if there are columns in the dataset where the values are the same in every cell. 
+Output this analysis to and an asthetically pleasing output table. Then add code to remove those columns from the origonal dataframe, 
+which we will now name 'df'.
