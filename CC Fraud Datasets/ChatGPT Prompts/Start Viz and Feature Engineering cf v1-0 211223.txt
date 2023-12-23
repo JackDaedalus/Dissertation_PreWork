@@ -1,7 +1,7 @@
 --- Columns with missing data ---
 
-I want to use this loaded dataset in a machine learning Kubeflow Python Notebook to build a credti card fraud neural network detection model. 
-This is a data analytics classification problem, and the target label is the column 'fraud'. To start the process I want Python code to identify
+I want to use this loaded dataset in a machine learning Kubeflow Python Notebook to build a credit card fraud neural network detection model. 
+This is a data analytics classification prediction problem, and the target label is the column 'fraud'. To start the process I want Python code to identify
 columns with more than 75% of the data missing.
 
 
@@ -20,3 +20,96 @@ Add code to rmove any rows still with missing data in the dataframe
 Add code to identify if there are columns in the dataset where the values are the same in every cell. 
 Output this analysis to and an asthetically pleasing output table. Then add code to remove those columns from the origonal dataframe, 
 which we will now name 'df'.
+
+
+
+--- Categorical Features ----
+
+After reading in the dataset just read, write Python code to insert into a Kubeflow Notebook that will load the data into a dataframe, named 'df'.
+
+I want to use this loaded dataset in a machine learning Kubeflow Python Notebook to build a credit card fraud neural network detection model. 
+This is a data analytics classification prediction problem, and the target label is the column 'fraud'. 
+
+Add Python code to update missing enties in the 'Secure3d' column with a 'U' character values.
+
+Add Python code to update missing enties in the 'DvcPosEntryMode' column with a 'U' character values.
+
+Amend the code to drop all the columns in the dataframe with more that 75% missing values and then those columns with only one value in the entire column.
+
+Amend the code to then drop the rows with the values that represent the 5% largest in number in the AmountOrig column. This is done to remove outliers.
+
+Then drop all the rows in the dataframe that still have missing values in any feature. Check that there are no missing values and present and aesthetically
+pleasing message in the Notebook output to confirm that there are no missing values anywhere in the dataframe.
+
+Looking at the current version of 'df', identify all the remaining categorical features and suggest a means to preprocess then before using these features 
+in the creation of a neural network fraud classification model.
+
+
+Identify how many of the categorical features have more than four distinct values.
+
+Out of the categorical features in the DataFrame, 19 features have more than four distinct values. Here are those features along with the count of their unique values:
+
+CardOperationsId: 2368 unique values
+AccountSourceUniqueId: 1154 unique values
+CardId: 1158 unique values
+CardSourceRefId: 1158 unique values
+DeviceId: 1711 unique values
+MerchantRefId: 1676 unique values
+MerchantName: 1676 unique values
+MerchantCity: 661 unique values
+MerchantPostalCode: 1555 unique values
+MerchantCountryCode: 34 unique values
+AcquirerRefId: 146 unique values
+AuthId: 1895 unique values
+DvcPosEntryMode: 11 unique values
+DeviceCity: 661 unique values
+DeviceZone: 61 unique values
+DevicePostalCode: 1555 unique values
+DeviceCountryCode: 34 unique values
+MerchantFSA: 662 unique values
+DeviceFSA: 662 unique values
+
+
+
+
+
+
+
+--- ChatGPT Feature Selection Suggestions  ---
+
+
+Using this version of the dataframe 'df' suggest an approach that would best determine the 50 most important of the remaining features 
+to use in this fraud classification problem. (See below)
+
+
+
+
+To determine the 50 most important features for the credit card fraud classification problem from your dataset, you might consider a combination of feature selection techniques and model-based importance. Here's an approach you could take using machine learning and statistical methods:
+
+### 1. Feature Selection using Filter Methods:
+- **Correlation Matrix**: Calculate the correlation between all predictors and the target variable 'fraud'. Select the top features having the highest absolute correlation with the target.
+- **ANOVA F-test**: Use ANOVA F-test to see if there is a significant difference between the distributions of each feature within the different target classes. Select features based on the highest F-values.
+
+### 2. Feature Selection using Wrapper Methods:
+- **Recursive Feature Elimination (RFE)**: Utilize models like Logistic Regression or Support Vector Machines to recursively remove features and build a model on those features that remain. It ranks features by their importance and allows you to select the top N features.
+
+### 3. Feature Selection using Embedded Methods:
+- **Lasso (L1 Regularization)**: Lasso regression can zero out some of the coefficients of less important features due to its property of penalizing the absolute size of coefficients. After fitting a Lasso model, you can select features with non-zero coefficients.
+- **Tree-based Feature Importance**: Use tree-based algorithms like Random Forest or Gradient Boosting. After fitting the model, you can obtain feature importances which indicate the usefulness of each feature in improving the model's prediction.
+
+### 4. Dimensionality Reduction:
+- **Principal Component Analysis (PCA)**: Though PCA doesn't select features directly, it transforms them into a set of linearly uncorrelated components, which can sometimes improve model performance and provide insights. You might consider PCA if you want to reduce dimensionality while retaining variance in the data.
+
+### Suggested Steps for Your Specific Case:
+1. **Preprocessing**: Ensure all features are appropriately preprocessed (normalized or standardized) as some of these techniques are sensitive to the scale of the data.
+2. **Split the Data**: Split your data into training and testing sets to avoid overfitting and to evaluate the feature selection method's effectiveness.
+3. **Implement Multiple Methods**: Given the complexity of fraud detection, consider applying several of the above methods and comparing the list of important features they provide. Intersection of features from different methods might be particularly strong candidates.
+4. **Model Building and Evaluation**: For each set of selected features, build a classification model and evaluate its performance. The set that offers the best balance of model simplicity and predictive performance might be your best choice.
+
+### In Practice:
+- Implement these methods using libraries like scikit-learn, which provides built-in functions for most of these feature selection techniques.
+- Always validate the choice of features not just by the performance of the model on training data, but how it generalizes to unseen data (test set).
+- Given that this is a fraud detection problem, pay special attention to metrics like Precision, Recall, F1-Score, and AUC-ROC, as simply achieving a high accuracy might be misleading due to class imbalance.
+
+By applying a combination of these methods, you can systematically reduce the number of features to the 50 most important ones for your fraud detection model, potentially improving model performance and interpretability while reducing overfitting and computational cost.
+
