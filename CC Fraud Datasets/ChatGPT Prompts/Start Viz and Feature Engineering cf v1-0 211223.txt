@@ -36,16 +36,34 @@ Add Python code to update missing enties in the 'DvcPosEntryMode' column with a 
 
 Amend the code to drop all the columns in the dataframe with more that 75% missing values and then those columns with only one value in the entire column.
 
-Amend the code to then drop the rows with the values that represent the 5% largest in number in the AmountOrig column. This is done to remove outliers.
+Amend the code to then drop the rows with the values that represent the 5% largest in number in the AmountBase column. This is done to remove outliers.
 
 Then drop all the rows in the dataframe that still have missing values in any feature. Check that there are no missing values and present and aesthetically
 pleasing message in the Notebook output to confirm that there are no missing values anywhere in the dataframe.
 
+
+Write new Python code, to add into my Kubeflow notebook, that will read the csv file just loaded, named 'Select_CC_Fraud_Features.csv'. 
+The first line of the csv file is the header with column names. Use the values in the 'FEATURE' column from the csv file to drop all columns in the 'df'  
+dataframe that are not listed in this column in the csv file. Produce an aesthetically pleasing output in the Notebook that shows the new structure of the 'df' dataframe. 
+Then produce an aesthetically pleasing table output to confirm the new shape of 'df'.
+
+
 Looking at the current version of 'df', identify all the remaining categorical features and suggest a means to preprocess then before using these features 
 in the creation of a neural network fraud classification model.
 
+Write code to Identify how many of the categorical features have more than four distinct values. Present this in the Notebook in a tabular format using the 'PrettyTable' library.
 
-Identify how many of the categorical features have more than four distinct values.
+Write code to change all values in the 'DvcPosEntryMode' column that are in ('5','80','90','91','96') to 'Card Present'. Do this by writing a function that can be reused for different
+column names and a different list of values to check, and a different value to replace the list entries with.
+
+
+Now write Python code to re-check the 'df' dataframe and perform one-hot encoding on all the categorical columns. Assign the resultant dataframe to a dataframe
+named 'df_encoded'.
+
+
+
+
+
 
 Out of the categorical features in the DataFrame, 19 features have more than four distinct values. Here are those features along with the count of their unique values:
 
@@ -113,3 +131,22 @@ To determine the 50 most important features for the credit card fraud classifica
 
 By applying a combination of these methods, you can systematically reduce the number of features to the 50 most important ones for your fraud detection model, potentially improving model performance and interpretability while reducing overfitting and computational cost.
 
+
+
+
+
+--- Model Tuning ---
+
+Assume that call the categorical columns have been converted to numerical values, write code to generate a neural network predictive model using the keras Python library. 
+Implement as much hyperparameter tuning as possible to improve the overall accuracy of the model.
+
+Based on the above code segments how can the code be amended to implement L2 regularization to prevent overfitting?
+
+Based on the above previous code segments how would different 'Optimizers' for the Keras neural network model impact on the potential accuracy of this 
+fraud classification prediction problem?
+
+How would I amend the code to tune Regularization Strength through cross-validation or other hyperparameter tuning techniques?
+
+
+How would I amend this Python code to implement the Keras Tuner optimization methods to tune multiple hyperparameters in a more efficient manner for this 
+fraud classification prediction problem?
