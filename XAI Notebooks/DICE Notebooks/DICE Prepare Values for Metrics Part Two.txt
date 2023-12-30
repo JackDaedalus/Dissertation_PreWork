@@ -9,3 +9,15 @@ explanation at the matching index in the counterfactual dataframe.
 
 The output from the function will be both dataframes.
  
+ 
+ 
+
+
+--- Working with CC dataset ---
+
+
+Write Python code that takes the first two instances from the 'df_encoded' dataframe 
+we have created in this thread and generate a single corresponding counterfactual (DiCE) explanation 
+for each original dataframe instance.
+
+Visualise these counterfactuals in the Python Kuebflow Notebook.

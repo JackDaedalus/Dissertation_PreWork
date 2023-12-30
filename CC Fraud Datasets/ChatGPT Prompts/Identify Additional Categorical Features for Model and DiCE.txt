@@ -1,0 +1,217 @@
+Here are the top 30 continuous features with the most number of unique values, including their range, minimum, maximum values, 
+and their column number in the dataset:
+
+1. **POSSum.acc.month.present**
+   - Column Number: 103
+   - Unique Count: 5,412
+   - Range: 20,963
+   - Minimum: 0
+   - Maximum: 20,963
+
+2. **POSSum.acc.month.total**
+   - Column Number: 102
+   - Unique Count: 5,412
+   - Range: 20,963
+   - Minimum: 0
+   - Maximum: 20,963
+
+3. **NotECommerceAuthAmount.acc.day.total**
+   - Column Number: 125
+   - Unique Count: 5,147
+   - Range: 58,468
+   - Minimum: 0
+   - Maximum: 58,468
+
+4. **NonEMVTransactionsAcc.acc.day.total**
+   - Column Number: 152
+   - Unique Count: 4,401
+   - Range: 63,169
+   - Minimum: 0
+   - Maximum: 63,169
+
+5. **POSTerminalAttendedAuthAmount.acc.day.total**
+   - Column Number: 87
+   - Unique Count: 4,383
+   - Range: 49,670
+   - Minimum: 0
+   - Maximum: 49,670
+
+6. **CustomerPresentAuthAmount.acc.day.total**
+   - Column Number: 354
+   - Unique Count: 4,203
+   - Range: 20,091
+   - Minimum: 0
+   - Maximum: 20,091
+
+7. **EMVTransactionsAcc.acc.day.total**
+   - Column Number: 334
+   - Unique Count: 3,190
+   - Range: 11,752
+   - Minimum: 0
+   - Maximum: 11,752
+
+8. **CustomerNotPresentAuthAmount.acc.day.total**
+   - Column Number: 173
+   - Unique Count: 3,186
+   - Range: 63,169
+   - Minimum: 0
+   - Maximum: 63,169
+
+9. **HourlyAuthAmt.acc.hour25**
+   - Column Number: 137
+   - Unique Count: 2,150
+   - Range: 63,161
+   - Minimum: 0
+   - Maximum: 63,161
+
+10. **HourlyAuthAmt.acc.hour15**
+    - Column Number: 136
+    - Unique Count: 1,935
+    - Range: 63,161
+    - Minimum: 0
+    - Maximum: 63,161
+
+11. **HourlyAuthAmt.acc.hour10**
+    - Column Number: 135
+    - Unique Count: 1,877
+    - Range: 63,161
+    - Minimum: 0
+    - Maximum: 63,161
+
+12. **HourlyAuthAmt.acc.hour4**
+    - Column Number: 134
+    - Unique Count: 1,737
+    - Range: 63,161
+    - Minimum: 0
+    - Maximum: 63,161
+
+13. **HourlyAuthAmt.acc.hour3**
+    - Column Number: 133
+    - Unique Count: 1,689
+    - Range: 63,161
+    - Minimum: 0
+    - Maximum: 63,161
+
+14. **NonEMVTransactionsAcc.acc.day.present**
+    - Column Number: 153
+    - Unique Count: 1,654
+    - Range: 63,161
+    - Minimum: 0
+    - Maximum: 63,161
+
+15. **HourlyAuthAmt.acc.hour1**
+    - Column Number: 132
+    - Unique Count: 1,548
+    - Range: 63,161
+    - Minimum: 0
+    - Maximum: 63,161
+
+16. **NotECommerceAuthAmount.acc.day.present**
+    - Column Number: 126
+    - Unique Count: 1,389
+    - Range: 22,885
+    - Minimum: 0
+    - Maximum: 22,885
+
+17. **CustomerNotPresentAuthAmount.acc.day.present**
+    - Column Number: 174
+    - Unique Count: 1,328
+    - Range: 63,161
+    - Minimum: 0
+    - Maximum: 63,161
+
+18. **POSTerminalAttendedAuthAmount.acc.day.present**
+    - Column Number: 88
+    - Unique Count: 1,236
+    - Range: 22,885
+    - Minimum: 0
+    - Maximum: 22,885
+
+19. **CustomerPresentAuthAmount.acc.day.present**
+    - Column Number: 355
+    - Unique Count: 1,161
+    - Range: 12,953
+    - Minimum: 0
+    - Maximum: 12,953
+
+20. **AmountAccount**
+    - Column Number: 33
+    - Unique Count: 1,077
+    - Range: 22,885
+    - Minimum: 0
+    - Maximum: 22,885
+
+21. **AmountBase**
+    - Column Number: 34
+    - Unique Count: 1,077
+    - Range: 22,885
+    - Minimum: 0
+    - Maximum: 22,885
+
+22. **AmountOrig**
+    - Column Number: 30
+    - Unique Count: 1,077
+    - Range: 22,885
+    - Minimum: 0
+    - Maximum: 22,885
+
+23. **HighRiskPOSSum.acc.hour.total**
+    - Column Number: 372
+    - Unique Count: 807
+    - Range: 13,068
+    - Minimum: 0
+    - Maximum: 13,068
+
+24. **EMVTransactionsAcc.acc.day.present**
+    - Column Number: 335
+    - Unique Count: 773
+    - Range: 10,957
+    - Minimum: 0
+    - Maximum: 10,957
+
+25. **NotECommerceAuthAmount.acc.day.past1**
+    - Column Number: 127
+    - Unique Count: 723
+    - Range: 18,398
+    - Minimum: 0
+    - Maximum: 18,398
+
+26. **NonEMVTransactionsAcc.acc.day.past1**
+    - Column Number: 154
+    - Unique Count: 703
+    - Range: 18,398
+    - Minimum: 0
+    - Maximum: 18,398
+
+27. **NotECommerceAuthAmount.acc.day.past3**
+    - Column Number: 128
+    - Unique Count: 665
+    - Range: 22,885
+    - Minimum: 0
+    - Maximum: 22,885
+
+28. **POSTerminalAttendedAuthAmount.acc.day.past1**
+    - Column Number: 89
+    - Unique Count: 662
+    - Range: 18,398
+    - Minimum: 0
+   
+
+ - Maximum: 18,398
+
+29. **CustomerPresentAuthAmount.acc.day.past1**
+    - Column Number: 356
+    - Unique Count: 632
+    - Range: 10,957
+    - Minimum: 0
+    - Maximum: 10,957
+
+30. **POSTerminalAttendedAuthAmount.acc.day.past3**
+    - Column Number: 90
+    - Unique Count: 603
+    - Range: 22,885
+    - Minimum: 0
+    - Maximum: 22,885
+
+These details, including the column number, can provide a comprehensive understanding of which 
+features within your dataset have the highest variability and can be helpful in various data analysis and machine learning tasks.
