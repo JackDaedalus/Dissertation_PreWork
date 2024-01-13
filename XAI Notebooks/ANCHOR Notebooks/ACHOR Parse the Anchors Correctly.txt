@@ -1,5 +1,5 @@
-The following code throws an error when the Anchor XAI condition created beging with a numerical value (for example: ['91.00 < CustomerNotPresentAuthAmount.acc.day.total <= 938.00']).
-Amend the Python code so that the the first numberical value is successfully assigned as the numerical value for the feature. 
+The following code throws an error when the Anchor XAI condition is created begining with a numerical value (for example: ['91.00 < CustomerNotPresentAuthAmount.acc.day.total <= 938.00']). 
+Amend the Python code so that the the first numerical value is successfully assigned as the numerical value for the feature.
 
 def parse_anchor_exps(new_df_anchor_results):
     
