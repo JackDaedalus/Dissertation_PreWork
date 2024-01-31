@@ -1,0 +1,24 @@
+The file just loaded contains the result of a machine learning experiment on a credit card fraud predicitive classification model 
+comparing four XAI methods (shap, lime, dice and anchor) against custom metrics: Identity, Stability, Seperability, Similarity, and 
+Comp_Efficiency.
+
+The first column of the loaded dataframe will contain the name of the metric. The next four columns have the name of the XAI method and
+the scores against each metric.
+
+
+Focus on plotting the density plots of values received from test samples across all 4 methods (shap, lime, dice and anchor). 
+Display these density plots in this chat session by creating a matrix of graphs for the comparison, making sure that the legends used in the
+graphs are clearly distinguished by different bright colours. Present this output in a very aesthetically 
+pleasing output in both this chat and trough Python code.
+
+Provide a commentary on the data represented in these density plots with five sentence descriptions that would be appropriate for a Data Science 
+Masters dissertation, with very particular reference to the XAI method metrics results.
+
+
+On top of that calculate the the Cohen-d among the four XAI methods to quantify the difference. Present this output in a very aesthetically 
+pleasing output in both this chat and through Python code.
+
+Provide a commentary on all steps with sentence descriptions that would be appropriate for a Data Science Masters dissertation. Generate three
+sentences that explain the purpose of the Cohen's d analysis in this context.
+
+Provide the Python code to implement all the above steps. Ensure the code is exhaustively commented.
