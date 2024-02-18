@@ -1,0 +1,60 @@
+In the Python function below, named 'get_unscaled_feature_values(exp, scaler, feature_names)' the first parameter is an ANCHOR XAI 
+explainer called 'exp', the second is a StandardScaler() named 'scaler' that was applied to a dataframe, and 'feature names' is the column heading for that dataframe.
+
+The 'scaler' was only applied to 50 of a total of 64 features because the other 14 had binary values of '0' and '1', and were not scaled.
+
+In the original version of the function below the scaler was applied to all 64 features. How do we rewrite the code so that the inverse_transform() is 
+only applied to the non-binary features when they are included in the list of features on the list from 'exp.names()'?
+
+
+"def get_unscaled_feature_values(exp, scaler, feature_names):
+        
+    # Convert feature_names to a list if it's a pandas Index
+    if isinstance(feature_names, pd.Index):
+        feature_names = feature_names.tolist()
+    
+    
+    original_features_and_values = {}
+
+    for condition in exp.names():
+        # Check for the type of condition and split accordingly
+        if '<=' in condition:
+            left, right = condition.split('<=', 1)
+            operator = '<='
+        elif '>=' in condition:
+            left, right = condition.split('>=', 1)
+            operator = '>='
+        elif '<' in condition:
+            left, right = condition.split('<', 1)
+            operator = '<'
+        elif '>' in condition:
+            left, right = condition.split('>', 1)
+            operator = '>'
+        else:
+            continue  # Skip if the condition format is not recognized
+
+        feature = left.strip()
+        scaled_value = float(right.strip())
+
+        # Find the index of the feature in the original dataset
+        feature_index = feature_names.index(feature)
+
+        # Create a dummy array for inverse transformation
+        dummy_array = np.zeros((1, len(feature_names)))
+        dummy_array[0, feature_index] = scaled_value
+    
+
+        # Inverse transform to get the original value
+        original_value = scaler.inverse_transform(dummy_array)[0, feature_index]
+        
+
+        # Adjust the original value if it's very close to 0 or 1
+        if -0.01 <= original_value <= 0.02:
+            original_value = 0.00
+        elif 0.99 <= original_value <= 1.01:
+            original_value = 1.00
+
+        # Store the condition with the original value
+        original_features_and_values[feature + ' ' + operator] = original_value
+
+    return original_features_and_values"

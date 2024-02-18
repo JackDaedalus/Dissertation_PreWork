@@ -1,0 +1,24 @@
+I am writing an Python Kubeflow Notebook experiment to build a Machine Learning binary classification model using a neural network (tensor flow) algorithm.
+
+The dataset contains many rows credit card of credit card transactions, with many features and a label, named 'fraud', that indicates if a transaction row is fraudulent or not.
+
+The Machine Learning problem is to build a predictive classification model to determine the probability that new unseen data is fraud, or not.
+
+The dataset contains many features that are a binary '1' or '0' value, representing a certain characteristic of the data.
+
+My question is related to data scaling. As part of data preparation I need to scale the data before I build the model. 
+How should I adapt the scaling process in my Python code to handle those features that have a binary '1' or '0' value?
+
+
+
+
+In later stages of the experiment, I am running Python libraries to generate explanations (XAI) on why certain transactions are predicted as fraud or not.
+
+How should I handle the features in the credit card fraud dataset that have a binary '1' or '0' value in the original dataset when generating ANCHOR XAI values 
+as an explanations for a given instance prediction?
+
+
+
+
+How should I handle the features in the credit card fraud dataset that have a binary '1' or '0' value in the original dataset when generating DiCE counterfactual 
+XAI values as an explanations for a given instance prediction?

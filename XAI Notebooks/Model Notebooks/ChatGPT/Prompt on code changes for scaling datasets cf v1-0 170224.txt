@@ -1,0 +1,24 @@
+Amend this Python function below for a Kubeflow Notebook so that the features in the 'X_train_downsampled' dataframe that only have a binary '1' or '0' value are identified and printed out on screen.
+
+Then split 'X_train_downsampled' so that only the non-binary features are scaled by the StandardScaler() routine, and the binary features are stored in a temporary dataframe.
+
+Then concat the binary and non-binary (scaled) features back into the returned dataframe 'X_train_downsampled_scaled'.
+
+Apply the same binary and non-binary split to the 'X_test_downsampled' dataframe but ensure the non-binary features in the 'X_test_downsampled' are scaled with the same transformation as used on 'X_train_downsampled' - using the 'scaler.transform' function.
+
+It is essential that the sequence of columns in both 'X_train_downsampled_scaled' and 'X_test_downsampled_scaled' ouput from the function is the same as the sequence of columns in the dataframe df_downsampled, 
+which is the other function input, but removing the label value in the 'sLabel' input. 
+
+"def scale_the_features(X_train_downsampled, X_test_downsampled, df_downsampled, sLabel='Fraud'):
+  
+     
+    # ----------------------------------------
+    # Scaling the features
+    # ----------------------------------------
+    scaler = StandardScaler()   
+    X_train_downsampled_scaled = scaler.fit_transform(X_train_downsampled)
+    X_test_downsampled_scaled  = scaler.transform(X_test_downsampled)
+    #
+    
+    
+    return X_train_downsampled_scaled, X_test_downsampled_scaled, scaler"

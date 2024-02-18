@@ -1,0 +1,42 @@
+In the Python code segment below for a Machine Learning problem, a DiCE counterfactual XAI explanation is generated into 'dice_exp', after reading in a 
+single row instance from a credi card fraud dataset with 64 features.
+
+How can a Python function be created around the line "actual_counterfactuals_df_inverse_scaled = 
+pd.DataFrame(scale_loaded.inverse_transform(your_actual_counterfactuals_df), columns=your_actual_counterfactuals_df.columns)" to account for a change in 
+process around the scaling of the feature values for each row in the dataset? 
+
+In the original version of the code segment below the scaler was applied to all 64 features. How do we rewrite the code so that the inverse_transform() is 
+only applied to the non-binary features when they are included in the list of features on the list from 'dice_exp.cf_examples_list[0].final_cfs_df'?
+
+The scaler, generated from the StandardScaler() function, and named 'scale_loaded' was only applied to 50 of a total of 64 features because the 
+other 14 had binary values of '0' and '1', and were not scaled.
+
+
+
+
+"d = dice_ml.Data(dataframe=df_downsampled_loaded_scaled, 
+                 continuous_features=cc_continuous_features_list, 
+                 outcome_name='Fraud')
+				 
+# Use the backend as TensorFlow and link the model
+m = dice_ml.Model(model=loaded_model, backend='TF2')
+
+# Initialize DiCE
+exp = dice_ml.Dice(d, m)
+
+# Create query instance to match the instances to be examined
+query_instance = df_downsampled_loaded_scaled.iloc[0:1].drop('Fraud', axis=1)
+
+# Generate counterfactual explanations
+dice_exp = exp.generate_counterfactuals(query_instance, total_CFs=5, desired_class="opposite")
+
+# Visualize the counterfactual explanations
+dice_exp.visualize_as_dataframe()
+
+# Retrieve counterfactuals as a DataFrame
+your_actual_counterfactuals_df = dice_exp.cf_examples_list[0].final_cfs_df
+
+
+# Inverse scale the counterfactuals
+actual_counterfactuals_df_inverse_scaled = pd.DataFrame(scale_loaded.inverse_transform(your_actual_counterfactuals_df), columns=your_actual_counterfactuals_df.columns)"
+		 
