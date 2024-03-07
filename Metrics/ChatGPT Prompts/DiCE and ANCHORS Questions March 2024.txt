@@ -1,0 +1,33 @@
+Is there any research literature or previous research on the topic of XAI methods in Machine Learning Data Science
+to elaborate on problems with DiCE Counterfactual when working with datasets with a high proportion of binary features?
+
+
+Is there any research literature or previous research on the topic of XAI methods in Machine Learning Data Science to elaborate on problems with DiCE Counterfactual when working with datasets with a high proportion of binary features?
+
+
+ScholarGPT
+
+"Features of Explainability: How users understand counterfactual and causal explanations for categorical and continuous features in XAI" by G Warren, MT Keane, and RMJ Byrne (2022). This study explores how one-hot encoding is applied to categorical features in models like DiCE, focusing on the challenges of interpreting binary features in the context of explainability​​.
+
+"“Better” Counterfactuals, Ones People Can Understand: Psychologically-Plausible Case-Based Counterfactuals Using Categorical Features for Explainable AI (XAI)" by G Warren, B Smyth, and MT Keane (2022). This work discusses handling categorical features, including binary features, for generating more understandable counterfactual explanations​​.
+
+"Discern: Discovering counterfactual explanations using relevance features from neighbourhoods" by N Wiratunga, A Wijekoon, I Nkisi-Orji (2021). This paper addresses the optimization process in generating counterfactual explanations, touching on the challenges posed by binary features​​.
+
+"Counterfactual explanations and how to find them: literature review and benchmarking" by R Guidotti (2022). This review categorizes problems in XAI and discusses counterfactual explanation methods, including handling of binary and categorical features through one-hot encoding among methods like DiCE​​.
+
+"A framework and benchmarking study for counterfactual generating methods on tabular data" by RMB de Oliveira, D Martens (2021). It presents a benchmarking study for counterfactual methods, including DiCE, highlighting how different methods handle binary features in their explanations​​.
+
+
+
+ScholarPro
+
+[5]	Explaining Machine Learning Classifiers through Diverse Counterfactual Explanations	Proposes a method for constructing a diverse set of counterfactuals, underlining the significance of diversity in counterfactual explanations and exploring practical issues on different datasets.	https://arxiv.org/pdf/1905.07697.pdf
+
+[1]	Benchmarking Counterfactual Algorithms for XAI: From White Box to Black Box	This study explores and benchmarks the capabilities of instance-centric counterfactual explanations, including DiCE, and discusses their impact on machine learning models, highlighting the importance of qualitative analysis alongside quantitative metrics.	https://arxiv.org/pdf/2203.02399.pdf
+
+[2]	Efficient XAI Techniques: A Taxonomic Survey	Focuses on addressing efficiency challenges in counterfactual explanation tasks, emphasizing the importanceof validity, sparsity, actionability, and closeness for counterfactuals.	https://arxiv.org/pdf/2302.03225.pdf
+
+
+
+
+Is there any research literature or previous research on the topic of XAI methods in Machine Learning Data Science to elaborate on problems with the computational overhead in generating ANCHOR explanations for a dataset instance for a binary classification problem?
