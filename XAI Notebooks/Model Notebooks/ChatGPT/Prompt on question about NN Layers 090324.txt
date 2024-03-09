@@ -1,0 +1,10 @@
+Within a Python Kubeflow Notebook, I have used the tensorflow library to build a Machine Learning Data Science Neural Network model as part of a binary classification problem to predict fraud in a credit card dataset.
+
+The 'keras_tuner' library was used to set up hyperparameter tuning with 50 trials and 10 epochs.
+
+
+How can I present on screen details about; What is the architecture of the ANN? How many input layers are used? How many hidden layers are in the Neural Network created. What is the output? 
+What kind of activation functions and learning rates were used? 
+
+Can we display overall model parameters? what regularisation was used? 
+
