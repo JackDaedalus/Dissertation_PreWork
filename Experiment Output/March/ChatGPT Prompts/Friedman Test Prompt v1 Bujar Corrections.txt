@@ -1,0 +1,22 @@
+The four spreadsheets just loaded each contain 20 results of custom evaluation metrics score listed under columns B through to F.
+
+Each spreadsheet represents a different Machine Learning XAI technique, indicated by the name at the start of each spreadsheet.
+
+For example, the SHAP technique results are stored in the file named 'SHAP_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx'.
+
+Perform a Friedman analysis, showing the steps of the workings in Python and detailed in the chat response, which outlines that statistical 
+significance test across different evaluation metrics against the given XAI techniques (SHAP, LIME, ANCHORS and DiCE).
+
+Display in a table the results of the Friedman Test of Significance, or not, between the XAI techniques when compared against the custom evaluation metrics.
+
+
+Explain the output of the Friedman analysis table with useful bar chart graphs.
+
+
+Explain the output of the Friedman analysis table with other useful visualisations.
+
+
+Can we explain why the results for LIME were not statistically significant and thus inconclusive?
+
+
+
