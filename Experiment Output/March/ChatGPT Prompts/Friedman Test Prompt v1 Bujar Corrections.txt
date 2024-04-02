@@ -20,3 +20,17 @@ Can we explain why the results for LIME were not statistically significant and t
 
 
 
+Run Wilcoxon signed-rank tests for pairwise comparisons between the XAI techniques for all the "XAI" metrics, with Bonferroni correction applied for multiple comparisons. 
+
+Present the output in a full table (no summary) in the chat window and generate the associated Python code. 
+
+Elaborate further on all the data presented in the Wilcoxon signed-rank tests in the chat ouput above, explaining what the table rows are telling us. 
+
+Format the response as six sentences that would be appropriate for the 'Results' section of a MSc dissertation in Data Science.
+
+In this explanation, is it possible with this Wilcoxon signed rank test to determine a ranking of each XAI technique based on these custom metrics, and establish which XAI technique is 'the best'?
+
+Explain in one sentence, how and why the Bonferroni correction is applied for multiple comparisons in the above analysis
+
+Explain again in the purpose and meaning of the values for 'Statistic' and 'p-Value' in the Wilcoxon signed-rank test tabular output above. Format the response as two sentences that would be 
+appropriate for the 'Results' section of a MSc dissertation in Data Science.
