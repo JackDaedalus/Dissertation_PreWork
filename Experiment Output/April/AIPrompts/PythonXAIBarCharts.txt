@@ -1,0 +1,28 @@
+# Assuming 'data_prepared' is a dictionary with technique names as keys and dataframes as values
+# We'll exclude 'XAI_Stability' from the metrics to be plotted
+metrics_columns_excluding_stability = [metric for metric in metrics_columns if metric != "XAI_Stability"]
+mean_scores = {metric: [] for metric in metrics_columns_excluding_stability}
+techniques = list(data_prepared.keys())
+
+for metric in metrics_columns_excluding_stability:
+    for technique in techniques:
+        mean_score = data_prepared[technique][metric].mean()
+        mean_scores[metric].append(mean_score)
+
+# Convert the mean scores to a DataFrame for easier plotting
+mean_scores_df = pd.DataFrame(mean_scores, index=techniques)
+
+# Plotting
+num_metrics = len(metrics_columns_excluding_stability)
+fig, axes = plt.subplots(nrows=1, ncols=num_metrics, figsize=(5*num_metrics, 5))
+if num_metrics == 1:  # Adjust if there's only one metric to plot, to handle axes indexing
+    axes = [axes]
+for i, metric in enumerate(metrics_columns_excluding_stability):
+    axes[i].bar(mean_scores_df.index, mean_scores_df[metric], color='skyblue')
+    axes[i].set_title(metric)
+    axes[i].set_xlabel('Technique')
+    axes[i].set_ylabel('Mean Score')
+    axes[i].tick_params(axis='x', rotation=45)
+
+plt.tight_layout()
+plt.show()
